@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HW9_1</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="favorite">Favorite</string>
+    <string name="coming_soon">Coming soon</string>
 </resources>
