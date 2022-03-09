@@ -15,15 +15,47 @@
         <action
             android:id="@+id/action_homeFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/commingSoonFragment"
         android:name="com.example.hw9_1.CommingSoonFragment"
         android:label="fragment_comming_soon"
-        tools:layout="@layout/fragment_comming_soon" />
+        tools:layout="@layout/fragment_comming_soon" >
+        <action
+            android:id="@+id/action_commingSoonFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_commingSoonFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.example.hw9_1.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_commingSoonFragment"
+            app:destination="@id/commingSoonFragment" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.hw9_1.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_favoriteFragment2"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_commingSoonFragment"
+            app:destination="@id/commingSoonFragment" />
+    </fragment>
 </navigation>
