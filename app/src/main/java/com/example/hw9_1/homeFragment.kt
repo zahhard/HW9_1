@@ -1,12 +1,13 @@
 package com.example.hw9_1
 
-import android.graphics.Color
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.hw9_1.databinding.FragmentHomeBinding
@@ -15,6 +16,7 @@ class homeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     var images = ArrayList<ImageView>()
     var i = 0
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -30,7 +32,9 @@ class homeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-      //  findNavController().navigate(R.id.action_homeFragment_to_commingSoonFragment)
+       // val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
+        //sharedPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
+
 
 
         init()
@@ -67,11 +71,18 @@ class homeFragment : Fragment() {
 
     private fun changeHeart(view: View){
         if (view is ImageView) {
-            i++
-            if (i % 2 == 0)
-                view.setImageResource(R.drawable.ic_baseline_favorite_border_24)
-            else
-                view.setImageResource(R.drawable.ic_baseline_favorite_24)
+            val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
+            if (!preferences?.getString("name", "").isNullOrBlank()) {
+                i++
+                if (i % 2 == 0)
+                    view.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                else
+                    view.setImageResource(R.drawable.ic_baseline_favorite_24)
+            }
+            else{
+                findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+                Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

@@ -26,10 +26,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.item_home -> {
-                goToComingSoon()
-                true
-            }
             R.id.item_coming -> {
                 goToComingSoon()
                 true
@@ -60,12 +56,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-
-
         navController.navigate(R.id.action_homeFragment_to_favoriteFragment)
-
-//        navController.navigate(R.id.action_commingSoonFragment_to_favoriteFragment)
-//        navController.navigate(R.id.action_profileFragment_to_favoriteFragment)
     }
 
     private fun goToProfile() {
