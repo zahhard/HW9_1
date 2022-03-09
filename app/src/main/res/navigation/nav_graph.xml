@@ -12,10 +12,18 @@
         <action
             android:id="@+id/action_homeFragment_to_commingSoonFragment"
             app:destination="@id/commingSoonFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
     </fragment>
     <fragment
         android:id="@+id/commingSoonFragment"
         android:name="com.example.hw9_1.CommingSoonFragment"
         android:label="fragment_comming_soon"
         tools:layout="@layout/fragment_comming_soon" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.hw9_1.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
 </navigation>
