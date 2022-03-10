@@ -72,7 +72,7 @@ class homeFragment : Fragment() {
     private fun changeHeart(view: View){
         if (view is ImageView) {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
-            if (!preferences?.getString("name", "").isNullOrBlank()) {
+            if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0)
                     view.setImageResource(R.drawable.ic_baseline_favorite_border_24)

@@ -31,9 +31,15 @@ class CommingSoonFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.ivHeart1.setOnClickListener{share()}
-        binding.ivHeart2.setOnClickListener{share()}
-        binding.ivHeart3.setOnClickListener{share()}
+        binding.ivHeart1.setOnClickListener{
+                share()
+        }
+        binding.ivHeart2.setOnClickListener{
+                share()
+        }
+        binding.ivHeart3.setOnClickListener{
+                share()
+        }
         super.onViewCreated(view, savedInstanceState)
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
@@ -44,14 +50,20 @@ class CommingSoonFragment : Fragment() {
 
 
     private fun share() {
-        Toast.makeText(activity, "share menu item clicked", Toast.LENGTH_SHORT).show()
-        var sendIntent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, "${binding.textView1.text}")
-            type = "text/plain"
-        }
+        if (Remember.isRemember) {
+            Toast.makeText(activity, "share menu item clicked", Toast.LENGTH_SHORT).show()
+            var sendIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "${binding.textView1.text}")
+                type = "text/plain"
+            }
 
-        val shareIntent = Intent.createChooser(sendIntent, null)
-        startActivity(shareIntent)
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
+        else {
+            findNavController().navigate(R.id.action_commingSoonFragment_to_profileFragment)
+            Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
+        }
     }
 }
