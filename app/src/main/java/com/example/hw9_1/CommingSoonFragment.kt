@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.navigation.fragment.findNavController
 import com.example.hw9_1.databinding.FragmentCommingSoonBinding
 import com.example.hw9_1.databinding.FragmentHomeBinding
 
@@ -34,9 +35,9 @@ class CommingSoonFragment : Fragment() {
         binding.ivHeart2.setOnClickListener{share()}
         binding.ivHeart3.setOnClickListener{share()}
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object: OnBackPressedCallback(false){
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-
+                findNavController().navigate(R.id.action_commingSoonFragment_to_homeFragment)
             }
         })
     }
