@@ -74,8 +74,13 @@ class homeFragment : Fragment() {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
-                if (i % 2 == 0)
+                if (i % 2 == 0) {
                     view.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
+                    val editor: SharedPreferences.Editor = share!!.edit()
+                   // Toast.makeText(activity, "${view.id.toString()}", Toast.LENGTH_SHORT).show()
+                  //  editor.putString("name", )
+                }
                 else
                     view.setImageResource(R.drawable.ic_baseline_favorite_24)
             }
