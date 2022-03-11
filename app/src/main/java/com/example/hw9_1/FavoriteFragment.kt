@@ -1,10 +1,12 @@
 package com.example.hw9_1
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
@@ -33,6 +35,24 @@ class FavoriteFragment : Fragment() {
                 findNavController().navigate(R.id.action_favoriteFragment_to_homeFragment)
             }
         })
+        binding.c1.isGone = true
+        binding.c2.isGone = true
+        binding.c3.isGone = true
+        binding.c4.isGone = true
+        binding.c5.isGone = true
+        binding.c6.isGone = true
+        binding.c7.isGone = true
+        binding.c8.isGone = true
+        binding.c9.isGone = true
+        binding.c10.isGone = true
+        binding.c11.isGone = true
+        binding.c12.isGone = true
+
+        val preferences = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
+        var id = preferences?.getInt("name", 0)
+        Toast.makeText(activity, "$id", Toast.LENGTH_SHORT).show()
+        if (id == 1)
+            binding.c1.isGone = false
 
 /*        binding.c1.isVisible = false
         binding.c2.isVisible = false
@@ -48,17 +68,6 @@ class FavoriteFragment : Fragment() {
         binding.c12.isVisible = false
 
  */
-        binding.c2.isGone = true
-      //  binding.c3.isGone = true
-        binding.c4.isGone = true
-        binding.c5.isGone = true
-        binding.c6.isGone = true
-        binding.c7.isGone = true
-        binding.c8.isGone = true
-        binding.c9.isGone = true
-        binding.c10.isGone = true
-        binding.c11.isGone = true
-        binding.c12.isGone = true
 
     }
 }
