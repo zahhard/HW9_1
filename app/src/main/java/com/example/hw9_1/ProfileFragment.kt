@@ -58,7 +58,6 @@ class ProfileFragment : Fragment() {
                // val editor: SharedPreferences.Editor = preferences!!.edit()
                 editor?.putString("name", binding.etName.text.toString())
                 editor?.putString("email", binding.etName.text.toString())
-                editor?.putString("password", binding.etPassword.text.toString())
                 Toast.makeText(activity, "shared successfully", Toast.LENGTH_SHORT).show()
 
                 findNavController().navigate(R.id.action_profileFragment_to_homeFragment)
@@ -79,10 +78,6 @@ class ProfileFragment : Fragment() {
             ischecked = true
         }
 
-        if (binding.etPassword.text?.isBlank() == true) {
-            binding.etPassword.error = "empty"
-            ischecked = true
-        }
         return ischecked
     }
 }

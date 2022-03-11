@@ -15,8 +15,10 @@ import com.example.hw9_1.databinding.FragmentHomeBinding
 class homeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     var images = ArrayList<ImageView>()
+    var favorites = ArrayList<Int>()
+
+    // lateinit var shared : SharedPreferences
     var i = 0
-    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -32,9 +34,7 @@ class homeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       // val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
-        //sharedPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
-
+        val shared = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
 
 
         init()
@@ -45,227 +45,185 @@ class homeFragment : Fragment() {
                 i++
                 if (i % 2 == 0) {
                     images[0].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = sharedPreferences!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                      editor.putString("name", "Aladdin")
-                }
-                else
+                    favorites.add(1)
+//                    val edit = shared?.edit()
+//                    edit?.putInt("name" , 1)
+//                    Toast.makeText(activity , "Was Saved" , Toast.LENGTH_SHORT).show()
+//                    edit?.apply()
+                } else
                     images[0].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[1].setOnClickListener{
+
+
+        images[1].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[1].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putString("name", "Aladdin")
-                }
-                else
+                    favorites.add(2)
+//                    val edit = shared?.edit()
+//                    edit?.putInt("name" , 2)
+//                    Toast.makeText(activity , "Was Saved" , Toast.LENGTH_SHORT).show()
+//                    edit?.apply()
+                } else
                     images[1].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
 
 
-        images[2].setOnClickListener{
+        images[2].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[2].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putString("name", "Aladdin")
-                }
-                else
+                    favorites.add(3)
+                } else
                     images[2].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[3].setOnClickListener{
+        images[3].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[3].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putInt("name", 1)
-                }
-                else
+                    favorites.add(4)
+                } else
                     images[3].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[4].setOnClickListener{
+        images[4].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[4].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putInt("name", 2)                }
-                else
+                    favorites.add(5)
+                } else
                     images[4].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[5].setOnClickListener{
+        images[5].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[5].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putInt("name", 3)                }
-                else
+                    favorites.add(6)
+                } else
                     images[5].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[6].setOnClickListener{
+        images[6].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[6].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putInt("name", 4)                }
-                else
+                    favorites.add(7)
+                } else
                     images[6].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[7].setOnClickListener{
+        images[7].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[7].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putString("name", "Aladdin")
-                }
-                else
+                    favorites.add(8)
+                } else
                     images[7].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[8].setOnClickListener{
+        images[8].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[8].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putString("name", "Aladdin")
-                }
-                else
+                    favorites.add(9)
+                } else
                     images[8].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[9].setOnClickListener{
+        images[9].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[9].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putString("name", "Aladdin")
-                }
-                else
+                    favorites.add(10)
+                } else
                     images[9].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[10].setOnClickListener{
+        images[10].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[10].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putString("name", "Aladdin")
-                }
-                else
+                    favorites.add(11)
+                } else
                     images[10].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
-        images[11].setOnClickListener{
+        images[11].setOnClickListener {
             val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             if (Remember.isRemember) {
                 i++
                 if (i % 2 == 0) {
                     images[11].setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                    //Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                    editor.putString("name", "Aladdin")
-                }
-                else
+                    favorites.add(12)
+                } else
                     images[11].setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                 Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
             }
         }
+
+        val edit = shared?.edit()
+        edit?.putInt("name", 5)
+        Toast.makeText(activity, "Was Saved", Toast.LENGTH_SHORT).show()
+        edit?.apply()
 
     }
 
@@ -284,30 +242,29 @@ class homeFragment : Fragment() {
         images.add(binding.ivHeart12)
     }
 
-  /*  private fun changeHeart(view: View){
-        if (view is ImageView) {
-            val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
-            if (Remember.isRemember) {
-                i++
-                if (i % 2 == 0) {
-                    view.setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-                    val editor: SharedPreferences.Editor = share!!.edit()
-                   Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
-                  //  editor.putString("name", )
-                }
-                else
-                    view.setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            else{
-                findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
-                Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
+    /*  private fun changeHeart(view: View){
+          if (view is ImageView) {
+              val preferences = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
+              if (Remember.isRemember) {
+                  i++
+                  if (i % 2 == 0) {
+                      view.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                      val share = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
+                      val editor: SharedPreferences.Editor = share!!.edit()
+                     Toast.makeText(activity, "${view.tooltipText}", Toast.LENGTH_SHORT).show()
+                    //  editor.putString("name", )
+                  }
+                  else
+                      view.setImageResource(R.drawable.ic_baseline_favorite_24)
+              }
+              else{
+                  findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+                  Toast.makeText(activity, "you have to Register", Toast.LENGTH_SHORT).show()
+              }
+          }
+      }
 
-   */
-
+     */
 
 
 }

@@ -30,11 +30,13 @@ class FavoriteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object: OnBackPressedCallback(true){
-            override fun handleOnBackPressed() {
-                findNavController().navigate(R.id.action_favoriteFragment_to_homeFragment)
-            }
-        })
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    findNavController().navigate(R.id.action_favoriteFragment_to_homeFragment)
+                }
+            })
         binding.c1.isGone = true
         binding.c2.isGone = true
         binding.c3.isGone = true
@@ -53,6 +55,28 @@ class FavoriteFragment : Fragment() {
         Toast.makeText(activity, "$id", Toast.LENGTH_SHORT).show()
         if (id == 1)
             binding.c1.isGone = false
+        if (id == 2)
+            binding.c2.isGone = false
+        if (id == 3)
+            binding.c3.isGone = false
+        if (id == 4)
+            binding.c4.isGone = false
+        if (id == 5)
+            binding.c5.isGone = false
+        if (id == 6)
+            binding.c6.isGone = false
+        if (id == 7)
+            binding.c7.isGone = false
+        if (id == 8)
+            binding.c8.isGone = false
+        if (id == 9)
+            binding.c9.isGone = false
+        if (id == 10)
+            binding.c10.isGone = false
+        if (id == 11)
+            binding.c11.isGone = false
+        if (id == 12)
+            binding.c12.isGone = false
 
 /*        binding.c1.isVisible = false
         binding.c2.isVisible = false
