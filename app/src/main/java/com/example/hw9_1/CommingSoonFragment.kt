@@ -25,9 +25,6 @@ class CommingSoonFragment : Fragment() {
     ): View {
         binding = FragmentCommingSoonBinding.inflate(inflater, container, false)
         return binding.root
-
-        // The callback can be enabled or disabled here or in handleOnBackPressed()
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

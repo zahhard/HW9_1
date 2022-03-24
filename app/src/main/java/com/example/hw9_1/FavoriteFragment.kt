@@ -50,35 +50,34 @@ class FavoriteFragment : Fragment() {
         binding.c11.isGone = true
         binding.c12.isGone = true
 
-        val preferences = activity?.getSharedPreferences("favorite", Context.MODE_PRIVATE)
-        var id = preferences?.getInt("name", 0)
-        Toast.makeText(activity, "$id", Toast.LENGTH_SHORT).show()
-        if (id == 1)
+        if (Favorite.favoriteArrayList[0] == 1)
             binding.c1.isGone = false
-        if (id == 2)
+        if (Favorite.favoriteArrayList.contains(2))
             binding.c2.isGone = false
-        if (id == 3)
+        if (Favorite.favoriteArrayList.contains(3))
             binding.c3.isGone = false
-        if (id == 4)
+        if (Favorite.favoriteArrayList.contains(4))
             binding.c4.isGone = false
-        if (id == 5)
+        if (Favorite.favoriteArrayList.contains(5))
             binding.c5.isGone = false
-        if (id == 6)
+        if (Favorite.favoriteArrayList.contains(6))
             binding.c6.isGone = false
-        if (id == 7)
+        if (Favorite.favoriteArrayList.contains(7))
             binding.c7.isGone = false
-        if (id == 8)
+        if (Favorite.favoriteArrayList.contains(8))
             binding.c8.isGone = false
-        if (id == 9)
+        if (Favorite.favoriteArrayList.contains(9))
             binding.c9.isGone = false
-        if (id == 10)
+        if (Favorite.favoriteArrayList.contains(10))
             binding.c10.isGone = false
-        if (id == 11)
+        if (Favorite.favoriteArrayList.contains(11))
             binding.c11.isGone = false
-        if (id == 12)
+        if (Favorite.favoriteArrayList.contains(12))
             binding.c12.isGone = false
 
-/*        binding.c1.isVisible = false
+
+
+/*      binding.c1.isVisible = false
         binding.c2.isVisible = false
         binding.c3.isVisible = false
         binding.c4.isVisible = false
@@ -90,7 +89,6 @@ class FavoriteFragment : Fragment() {
         binding.c10.isVisible = false
         binding.c11.isVisible = false
         binding.c12.isVisible = false
-
  */
 
     }
