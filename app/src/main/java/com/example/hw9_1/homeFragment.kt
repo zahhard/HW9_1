@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.hw9_1.databinding.FragmentHomeBinding
-import kotlin.math.log
+
 
 object Favorite{
     var favoriteArrayList = ArrayList<Int>()
@@ -33,6 +34,10 @@ class homeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var adapter = CustomAdapter(Repository.movieList)
+        binding.recyclerview?.adapter = adapter
+        binding.recyclerview?.setLayoutManager(GridLayoutManager(requireContext(), 3))
+
         init()
         heartOnClickes()
         heartCheckWhenBackHome()
@@ -40,42 +45,42 @@ class homeFragment : Fragment() {
     }
 
     private fun heartOnClickes() {
-        images[0].setOnClickListener {
-            heartClicked(0)
-        }
-        images[1].setOnClickListener {
-            heartClicked(1)
-        }
-        images[2].setOnClickListener {
-            heartClicked(2)
-        }
-        images[3].setOnClickListener {
-            heartClicked(3)
-        }
-        images[4].setOnClickListener {
-            heartClicked(4)
-        }
-        images[5].setOnClickListener {
-            heartClicked(5)
-        }
-        images[6].setOnClickListener {
-            heartClicked(6)
-        }
-        images[7].setOnClickListener {
-            heartClicked(7)
-        }
-        images[8].setOnClickListener {
-            heartClicked(8)
-        }
-        images[9].setOnClickListener {
-            heartClicked(9)
-        }
-        images[10].setOnClickListener {
-            heartClicked(10)
-        }
-        images[11].setOnClickListener {
-            heartClicked(11)
-        }
+//        images[0].setOnClickListener {
+//            heartClicked(0)
+//        }
+//        images[1].setOnClickListener {
+//            heartClicked(1)
+//        }
+//        images[2].setOnClickListener {
+//            heartClicked(2)
+//        }
+//        images[3].setOnClickListener {
+//            heartClicked(3)
+//        }
+//        images[4].setOnClickListener {
+//            heartClicked(4)
+//        }
+//        images[5].setOnClickListener {
+//            heartClicked(5)
+//        }
+//        images[6].setOnClickListener {
+//            heartClicked(6)
+//        }
+//        images[7].setOnClickListener {
+//            heartClicked(7)
+//        }
+//        images[8].setOnClickListener {
+//            heartClicked(8)
+//        }
+//        images[9].setOnClickListener {
+//            heartClicked(9)
+//        }
+//        images[10].setOnClickListener {
+//            heartClicked(10)
+//        }
+//        images[11].setOnClickListener {
+//            heartClicked(11)
+//        }
     }
 
     private fun heartClicked(index: Int) {
@@ -122,18 +127,18 @@ class homeFragment : Fragment() {
     }
 
     private fun init() {
-        images.add(binding.ivHeart1)
-        images.add(binding.ivHeart2)
-        images.add(binding.ivHeart3)
-        images.add(binding.ivHeart4)
-        images.add(binding.ivHeart5)
-        images.add(binding.ivHeart6)
-        images.add(binding.ivHeart7)
-        images.add(binding.ivHeart8)
-        images.add(binding.ivHeart9)
-        images.add(binding.ivHeart10)
-        images.add(binding.ivHeart11)
-        images.add(binding.ivHeart12)
+//        images.add(binding.ivHeart1)
+//        images.add(binding.ivHeart2)
+//        images.add(binding.ivHeart3)
+//        images.add(binding.ivHeart4)
+//        images.add(binding.ivHeart5)
+//        images.add(binding.ivHeart6)
+//        images.add(binding.ivHeart7)
+//        images.add(binding.ivHeart8)
+//        images.add(binding.ivHeart9)
+//        images.add(binding.ivHeart10)
+//        images.add(binding.ivHeart11)
+//        images.add(binding.ivHeart12)
     }
 }
 
